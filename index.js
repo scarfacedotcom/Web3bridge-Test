@@ -19,10 +19,14 @@ addForm.addEventListener('submit', e => {
     e.preventDefault()
     const Todo = addForm.add.value.trim();
 
-    if(Todo.length) {
+    if(Todo.length <= 4) {
       newTemplate(Todo)
       addForm.reset()
+    } else {
+        console.log("max number has been exceeded")
     }
+
+  
 })
 
 list.addEventListener('click', e => {
@@ -51,3 +55,5 @@ search.addEventListener('keyup', () => {
     const term = search.value.trim();
     filterTodos(term);
 })
+
+
